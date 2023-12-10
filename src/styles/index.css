@@ -8,6 +8,23 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #3F86F7;
+}
+
+.content {
+    display: flex;
+    flex-flow: row wrap-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
 button {
     border: none;
     cursor: pointer;
