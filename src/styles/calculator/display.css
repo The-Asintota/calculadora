@@ -1,0 +1,46 @@
+.clt-display {
+    width: 100%;
+    height: 150px;
+    background-color: #5776E0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-areas:
+        "operation operation operation"
+        "equals-symbol result result";
+}
+
+.clt-disply-recentOperation {
+    grid-area: operation;
+    font-size: 30px;
+    color: white;
+    opacity: 0.5;
+    align-self: end;
+    justify-self: end;
+}
+
+.clt-display-equalSymbol {
+    grid-area: equals-symbol;
+    width: 100%;
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    align-self: end;
+    justify-self: start;
+}
+
+.clt-display-operation {
+    grid-area: result;
+    align-self: end;
+    justify-self: end;
+    width: auto;
+    max-width: 100%;
+    background-color: #5776E0;
+    color: white;
+    font-size: 35px;
+    text-align: right;
+}
+
+.display-error {
+    border: solid 1px red;
+}
