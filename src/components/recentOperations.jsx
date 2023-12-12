@@ -1,4 +1,4 @@
-import "../../styles/recentOperations.css"
+import "../styles/recentOperations.css"
 
 
 export const RecentOperations = () => {
@@ -18,8 +18,8 @@ export const RecentOperations = () => {
                 </ul>
             </article>
 
-            <div class="ro-clean">
-                <button class="ro-clean-button">
+            <div className="ro-clean">
+                <button className="ro-clean-button">
                     Limpiar Historial
                 </button>
             </div>
