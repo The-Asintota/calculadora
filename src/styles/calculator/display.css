@@ -1,46 +1,125 @@
-.clt-display {
-    width: 100%;
-    height: 150px;
-    background-color: #5776E0;
+.display {
+    position: relative;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 50px 50px;
     grid-template-columns: 1fr 2fr 2fr;
     grid-template-areas:
         "operation operation operation"
-        "equals-symbol result result";
+        "equalSymbol result result";
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #5776E0;
 }
 
-.clt-disply-recentOperation {
+
+.display--error {
+    border: solid 1px red;
+}
+
+
+.display__recentOperation {
+    position: relative;
     grid-area: operation;
-    font-size: 30px;
-    color: white;
-    opacity: 0.5;
-    align-self: end;
+    height: 100%;
+    display: flex;
+    align-items: center;
     justify-self: end;
+    font-size: 20px;
+    color: #A6B8EF;
+    animation: solve .3s ease-in-out;
 }
 
-.clt-display-equalSymbol {
-    grid-area: equals-symbol;
-    width: 100%;
+
+.display__recentOperation--animation {
+    animation: displayRecentOperation .3s ease-in-out;
+}
+
+
+.display__transition {
+    position: absolute;
+    top: 60px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-self: end;
     font-size: 35px;
     color: white;
-    text-align: center;
-    align-self: end;
-    justify-self: start;
+    visibility: hidden;
 }
 
-.clt-display-operation {
+
+.display__transition--animation {
+    animation: displayTransition .8s ease-in-out;
+}
+
+
+.display__content {
+    position: relative;
     grid-area: result;
-    align-self: end;
+    height: 100%;
+    display: flex;
+    align-items: center;
     justify-self: end;
-    width: auto;
-    max-width: 100%;
-    background-color: #5776E0;
     color: white;
     font-size: 35px;
     text-align: right;
 }
 
-.display-error {
-    border: solid 1px red;
+
+.display__content--animation {
+    animation: displayContent .3s ease-in-out;
+}
+
+
+.display__equalSymbol {
+    grid-area: equalSymbol;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+}
+
+
+@keyframes displayRecentOperation {
+    0% { top: 0; }
+    100% { 
+        top: -20px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes displayTransition {
+    0% { visibility: visible; }
+    40% { 
+        top: 15px;
+        font-size: 20px;
+        color: #A6B8EF;
+    }
+    100% {
+        top: 15px;
+        font-size: 20px;
+        color: #A6B8EF;
+    }
+}
+
+
+@keyframes displayContent {
+    0% { 
+        top: 50%;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+
+@keyframes solve {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
