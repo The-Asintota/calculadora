@@ -1,15 +1,16 @@
 import { useState } from "react"
 import { Display } from "./display.jsx"
-import { KeyPad } from "./keypad.jsx"
-import { Calculate } from "../../domain/calculator.js"
-import "../../styles/calculator/calculator.css"
+import { KeyPad } from "./keyPad.jsx"
+import { RecentOperations } from "./recentOperations.jsx"
+import { Calculate } from "../domain/calculator.js"
+import "../styles/calculator/calculator.css"
 
 
 const MAX_LENGTH = 16
 let mathExpression = ''
 
 
-export const Calculator = () => {
+export const WebCalculator = () => {
     const [displayValue, setDisplayValue] = useState('0')
     const [recentOperation, setRecentOperation] = useState('')
 
@@ -18,11 +19,9 @@ export const Calculator = () => {
         setDisplayValue('0')
         mathExpression = ''
     }
-
     const handleDEL = () => {
         setDisplayValue(prevValue => prevValue.slice(0, -1))
     }
-
     const handleEqual = () => {
         const expression = new Calculate(mathExpression)
         setRecentOperation(displayValue)
@@ -30,8 +29,9 @@ export const Calculator = () => {
         mathExpression = expression.GetResult()
     }
 
+    const map = { 'AC': handleAC, 'DEL': handleDEL, '=': handleEqual }
+
     const handleButtonValue = (value, innerText) => {
-        const map = { 'AC': handleAC, 'DEL': handleDEL, '=': handleEqual }
         if (Object.keys(map).includes(value)) {
             return map[value]()
         }
@@ -46,9 +46,13 @@ export const Calculator = () => {
     }
 
     return (
-        <section className="clt-calculator">
-            <Display value={displayValue} operation={recentOperation} />
-            <KeyPad onButtonClick={handleButtonValue} />
+        <section className="webCalculator">
+            <RecentOperations result={displayValue} operation={recentOperation} />
+
+            <section className="calculator">
+                <Display result={displayValue} operation={recentOperation} />
+                <KeyPad onButtonClick={handleButtonValue} />
+            </section>
         </section>
     )
 }
