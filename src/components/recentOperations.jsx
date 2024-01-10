@@ -3,23 +3,23 @@ import "../styles/recentOperations.css"
 
 export const RecentOperations = () => {
     return (
-        <section className="ro-recentOperations">
-            <h2 className="ro-title">Historial</h2>
-            <article className="ro-content">
+        <section className="recentOperation">
+            <h2 className="recentOperation__title">Historial</h2>
+            <article className="recentOperation__content">
                 <header>
                     <h3>Operaciones recientes:</h3>
                 </header>
 
-                <ul className="ro-content-items">
+                <ul className="content__items">
                     <li className="item">
-                        <div className="item-operation">1+1</div>
-                        <div className="item-result">= 2</div>
+                        <div className="itemOperation">1+1</div>
+                        <div className="itemResult">= 2</div>
                     </li>
                 </ul>
             </article>
 
-            <div className="ro-clean">
-                <button className="ro-clean-button">
+            <div className="recentOperation__clean">
+                <button className="cleanButton">
                     Limpiar Historial
                 </button>
             </div>

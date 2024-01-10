@@ -1,4 +1,4 @@
-.ro-recentOperations {
+.recentOperation {
     width: 400px;
     height: 500px;
     -webkit-box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.4);
@@ -13,7 +13,7 @@
     grid-template-columns: 1fr;
 }
 
-.ro-title {
+.recentOperation__title {
     grid-area: title;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@
     color: white;
 }
 
-.ro-content {
+.recentOperation__content {
     grid-area: content;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@
     overflow-x: hidden;
 }
 
-.ro-content-items {
+.content__items {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -57,20 +57,20 @@
     background-color: #EFF6FF;
 }
 
-.item-operation {
+.itemOperation {
     display: flex;
     align-items: center;
     color: black;
 }
 
-.item-result {
+.itemResult {
     display: flex;
     align-items: center;
     height: 100%;
     color: #5776E0
 }
 
-.ro-clean {
+.recentOperation__clean {
     grid-area: clean;
     width: 100%;
     height: 70px;
@@ -80,7 +80,7 @@
     align-items: center;
 }
 
-.ro-clean-button {
+.cleanButton {
     height: auto;
     width: auto;
     background-color: #3B82F6;
@@ -92,6 +92,6 @@
     border-radius: 0.4rem;
 }
 
-.ro-clean-button:hover {
+.cleanButton:hover {
     background-color: #2563EB;
 }
