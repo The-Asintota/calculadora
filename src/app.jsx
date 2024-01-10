@@ -1,13 +1,9 @@
-import { Calculator } from "./components/calculator/calculator.jsx"
-import { RecentOperations } from "./components/recentOperations.jsx"
+import { WebCalculator } from "./components/calculator.jsx"
 import "./styles/index.css"
 
 
-export const WebCalculator = () => {
+export const App = () => {
     return (
-        <section className="content">
-            <RecentOperations />
-            <Calculator />
-        </section>
+        <WebCalculator />
     )
 }
