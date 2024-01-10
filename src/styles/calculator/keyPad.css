@@ -1,51 +1,59 @@
-.clt-calculator-keypad {
+.calculator__keyPad {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
 
-.clt-calculator-keypad-number {
-    background-color: white;
+
+.keypad__number {
+    background-color: #ffffff;
     font-size: 20px;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
 }
 
-.clt-calculator-keypad-number:hover {
-    background-color: #f0f0f0;
-}
 
-.clt-calculator-keypad-operation {
+.keypad__operation {
     background-color: #E7ECFD;
     color: #0284c7;
     font-weight: 700;
     font-size: 20px;
+
+    &:hover {
+        background-color: #cfd9fa;
+    }
 }
 
-.clt-calculator-keypad-operation:hover {
-    background-color: #cfd9fa;
-}
 
-.clt-calculator-keypad-delete {
+.keypad__delete {
     background: url('/src/assets/icons/CilDelete.svg') no-repeat center;
-    background-size: 32%;
+    background-size: 31%;
     background-color: #E7ECFD;
+
+    &:hover {
+        background-color: #cfd9fa;
+    }
 }
 
-.clt-calculator-keypad-delete:hover {
-    background-color: #cfd9fa;
-}
 
-.clt-calculator-keypad-clean {
+.keypad__clean {
     background-color: #FAD4CF;
     color: red;
     font-size: 20px;
+
+    &:hover {
+        background-color: #E47B46;
+    }
 }
 
-.clt-calculator-keypad-clean:hover {
-    background-color: #E47B46;
-    color: #FAD4CF;
-    font-size: 20px;
+
+.calculator__keyPad > button {
+    transition: transform .1s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
-
-
-
