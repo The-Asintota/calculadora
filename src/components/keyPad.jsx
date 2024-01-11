@@ -1,4 +1,4 @@
-import "../styles/calculator/keypad.css"
+import "../styles/calculator/keyPad.css"
 
 
 export const KeyPad = ({ onButtonClick }) => {
